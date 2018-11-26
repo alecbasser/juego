@@ -349,8 +349,7 @@
          */
         init: function () {
             // Hide the static icon.
-            document.querySelector('.' + Runner.classes.ICON).style.visibility =
-                'hidden';
+            document.querySelector('.' + Runner.classes.ICON).style.visibility ='hidden';
 
             this.adjustDimensions();
             this.setSpeed();
@@ -418,8 +417,7 @@
             this.resizeTimerId_ = null;
 
             var boxStyles = window.getComputedStyle(this.outerContainerEl);
-            var padding = Number(boxStyles.paddingLeft.substr(0,
-                boxStyles.paddingLeft.length - 2));
+            var padding = Number(boxStyles.paddingLeft.substr(0,boxStyles.paddingLeft.length - 2));
 
             this.dimensions.WIDTH = this.outerContainerEl.offsetWidth - padding * 2;
 

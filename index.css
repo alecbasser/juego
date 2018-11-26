@@ -33,7 +33,7 @@ html, body {
   line-height: 1.55;
   margin: 0 auto;
   max-width: 600px;
-  padding-top: 100px;
+  padding-top: 90px;
   width: 100%;
 }
 
@@ -42,7 +42,7 @@ html, body {
   max-width: 600px;
   overflow: hidden;
   position: absolute;
-  top: 35px;
+  top: 0px;
   width: 44px;
 }
 
@@ -57,9 +57,9 @@ html, body {
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#29b8e5+0,b3dced+52,ededed+78 */
 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1a1b38+1,697ade+52,ededed+78 */
 background: #1a1b38; /* Old browsers */
-background: -moz-linear-gradient(top, #1a1b38 1%, #697ade 52%, #ededed 78%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top, #1a1b38 1%,#697ade 52%,#ededed 78%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom, #1a1b38 1%,#697ade 52%,#ededed 78%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+background: -moz-linear-gradient(top, #1757b3 1%, #7292da 52%, #ededed 78%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #1757b3 1%,#7292da 52%,#ededed 78%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #1757b3 1%,#7292da 52%,#ededed 78%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a1b38', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
 
 }
@@ -132,7 +132,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a1b38', end
     margin-bottom: 0;
   }
   .offline .runner-container {
-    top: 10px;
+    top: 0px;
   }
 }
 

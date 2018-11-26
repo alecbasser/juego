@@ -13,15 +13,29 @@
     <script src="index.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
 	<style>
+		
+	.runner-container	{
+	}
+		
+		
+		html { 
+  background: url(assets/background.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+		table{font-weight: bold; margin-top: 25px; background-color: rgba(249,249,249,0.67)}
 		body{font-family: 'Amatic SC', cursive;}
 		h1 {
     display: block;
     font-size: 2em;
-    margin-block-start: 0.67em;
-    margin-block-end: 0.67em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
+    margin-block-start: 0px !important;
+    margin-block-end: 0px !important;
+    margin-inline-start: 0px !important;
+    margin-inline-end: 0px !important;
     font-weight: bold;
+			color: #ffffff;
 }
 	
 	</style>
@@ -29,29 +43,47 @@
 
 <body id="t" class="offline">
     <div id="messageBox" class="sendmessage">
-         <h1 style="text-align: center;">Press Space to start</h1>
+         <h1 style="text-align: center;" id="messageLabel">Press Space to start</h1>
          <div class="niokbutton" onclick="okbuttonsend()"></div>
     </div>
     <div id="main-frame-error" class="interstitial-wrapper">
         <div id="main-content">
-			<table width="200" border="1" align="center">
+			<table width="299" border="0" align="center">
   <tbody>
     <tr>
-      <td>3</td>
-      <td id="score-5">3</td>
+      <td align="center" valign="middle">Position</td>
+      <td align="center" valign="middle">Gamer</td>
+      <td align="center" valign="middle" id="score-2">Score</td>
     </tr>
     <tr>
-      <td>3</td>
-      <td>3</td>
+      <td width="63" align="center" valign="middle">1rt</td>
+      <td width="167" align="center" valign="middle">name1</td>
+      <td width="47" align="center" valign="middle" id="score-5">3</td>
     </tr>
     <tr>
-      <td>3</td>
-      <td>3</td>
+      <td align="center" valign="middle">2nd</td>
+      <td align="center" valign="middle">name2</td>
+      <td align="center" valign="middle">3</td>
+    </tr>
+    <tr>
+      <td align="center" valign="middle">3tr</td>
+      <td align="center" valign="middle">name3</td>
+      <td align="center" valign="middle">3</td>
+    </tr>
+	  <tr>
+	    <td align="center" valign="middle">4tr</td>
+      <td align="center" valign="middle">name4</td>
+      <td align="center" valign="middle">3</td>
+    </tr>
+	  <tr>
+	    <td align="center" valign="middle">5tr</td>
+      <td align="center" valign="middle">name5</td>
+      <td align="center" valign="middle">3</td>
     </tr>
   </tbody>
 </table>
             <div class="icon icon-offline" alt=""></div>
-        </div>
+      </div>
         <div id="offline-resources">
             <img id="offline-resources-1x" src="assets/default_100_percent/100-offline-sprite.png">
             <img id="offline-resources-2x" src="assets/default_200_percent/200-offline-sprite.png">
@@ -75,5 +107,51 @@
     }
 };
 </script>
-    
+   
+<script>
+	var message = "Press Space to start";
+var msgCount = 0;
+var blinkCount = 0;
+var blinkFlg = 0;
+var timer1, timer2;
+var messageLabel = document.getElementById("messageLabel");
+
+function textFunc() {
+   messageLabel.innerHTML = message.substring(0, msgCount);
+   
+   if (msgCount == message.length) {
+      // Stop Timer
+      clearInterval(timer1);
+      
+      // Start blinking animation!
+    //  timer2 = setInterval("blinkFunc()", 200);
+      
+   } else {
+      msgCount++;
+   }
+}
+
+function blinkFunc() {
+   
+   // Blink 5 times
+   if (blinkCount < 6) {
+      if(blinkFlg == 0) {
+         messageLabel.innerHTML = message;
+         blinkFlg = 1;
+         blinkCount++;
+      } else {
+         messageLabel.innerHTML = "";
+         blinkFlg = 0;
+      }
+   } else {
+      // Stop Timer
+      clearInterval(timer2);
+   }
+}
+
+
+timer1 = setInterval("textFunc()", 150); // Every 150 milliseconds
+	
+	</script>	
+	
 </html>

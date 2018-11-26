@@ -792,7 +792,51 @@
             if (this.distanceRan > this.highestScore) {
                 this.highestScore = Math.ceil(this.distanceRan);
                 this.distanceMeter.setHighScore(this.highestScore);
-            }
+				var currentScore = Math.round(this.highestScore * 0.025);
+				alert(currentScore);
+            
+				
+				
+				
+				
+				
+				
+				
+				
+				var score_d = 0;
+				if (document.getElementById("score-5") !== null) {
+					score_d = document.getElementById("score-5").innerHTML
+					document.getElementById("score-5").innerHTML  = currentScore;
+				}
+				if (currentScore > score_d) {
+					var xhr = new XMLHttpRequest();
+					xhr.open('GET', '/ajax/quf.php?points=' + currentScore, false);
+					xhr.send();
+					if (xhr.status != 200) {} else {
+						if (xhr.responseText != '') {
+							if (user_name == '' || user_name == null) {
+								user_name = prompt(xhr.responseText, 'Anonym');
+								if (user_name == null || user_name == '') user_name = 'Anonym';
+								localStorage.setItem("userName", user_name);
+								getUserName();
+							}
+							xhr.open('GET', '/ajax/quf.php?name=' + user_name + '&points=' + currentScore, false);
+							xhr.send();
+							updateRecords();
+						}
+					}
+				}
+			}
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
 
             // Reset the time clock.
             this.time = getTimeStamp();

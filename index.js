@@ -15,8 +15,10 @@
         // Singleton
         if (Runner.instance_) {
             return Runner.instance_;
+			
         }
         Runner.instance_ = this;
+		
 
         this.outerContainerEl = document.querySelector(outerContainerId);
         this.containerEl = null;
@@ -350,6 +352,7 @@
         init: function () {
             // Hide the static icon.
             document.querySelector('.' + Runner.classes.ICON).style.visibility ='hidden';
+			
 
             this.adjustDimensions();
             this.setSpeed();
@@ -483,8 +486,14 @@
                 // }
                 this.playing = true;
                 this.activated = true;
+				
+				//alert("runner");
+				 
+				
             } else if (this.crashed) {
+				
                 this.restart();
+				
             }
         },
 
@@ -493,6 +502,8 @@
          * Update the game status to started.
          */
         startGame: function () {
+			$('.tabla').removeClass('in').addClass('out');
+			
             this.runningTime = 0;
             this.playingIntro = false;
             this.tRex.playingIntro = false;
@@ -519,6 +530,7 @@
          * Update the game frame and schedules the next one.
          */
         update: function () {
+			
             this.updatePending = false;
 
             var now = getTimeStamp();
@@ -768,6 +780,7 @@
          * Game over state.
          */
         gameOver: function () {
+			$('.tabla').removeClass('out').addClass('in');
             this.playSound(this.soundFx.HIT);
             vibrate(200);
 
@@ -791,7 +804,7 @@
                 this.highestScore = Math.ceil(this.distanceRan);
                 this.distanceMeter.setHighScore(this.highestScore);
 				var currentScore = Math.round(this.highestScore * 0.025);
-				alert(currentScore);
+				//alert(currentScore);
             
 				
 				
@@ -854,6 +867,7 @@
                 this.tRex.update(0, Trex.status.RUNNING);
                 this.time = getTimeStamp();
                 this.update();
+				
             }
         },
 
@@ -874,6 +888,7 @@
                 this.playSound(this.soundFx.BUTTON_PRESS);
                 this.invert(true);
                 this.update();
+				$('.tabla').removeClass('in').addClass('out');
             }
         },
 

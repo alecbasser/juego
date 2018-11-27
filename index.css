@@ -144,5 +144,20 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a1b38', end
 }
 
 
+.out {
+  -webkit-filter: blur(2px);
+  /*-webkit-transform: scale(1.4, 1.4);*/
+  opacity: 0.55;
+  -webkit-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+  /*visibility: hidden;*/
+}
 
+.in {
+  -webkit-filter: blur(0px);
+  /*-webkit-transform: scale(1.4, 1.4);*/
+  -webkit-transition: all 0.25s ease-in;
+  transition: all 0.25s ease-in;
+  /*visibility: visible;*/
+}
 

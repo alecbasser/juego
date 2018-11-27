@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
     <script src="index.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<style>
 		
 	.runner-container	{
@@ -48,7 +49,7 @@
     </div>
 <div id="main-frame-error" class="interstitial-wrapper">
         <div id="main-content">
-			<table width="304" border="0" align="center" style="margin-top: 50px;">
+			<table width="304" border="0" align="center" style="margin-top: 50px;" class="tabla" id="tabla">
   <tbody>
     <tr>
       <td align="center" valign="middle"><strong>Position</strong></td>
@@ -118,7 +119,7 @@
 </script>
    
 <script>
-	var message = "Press Space to start";
+	var message = "Press Space to start <br> or touch the screen";
 var msgCount = 0;
 var blinkCount = 0;
 var blinkFlg = 0;
@@ -159,7 +160,7 @@ function blinkFunc() {
 }
 
 
-timer1 = setInterval("textFunc()", 150); // Every 150 milliseconds
+timer1 = setInterval("textFunc()", 100); // Every 150 milliseconds
 	
 	</script>	
 	
